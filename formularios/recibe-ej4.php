@@ -19,6 +19,13 @@ for($i = 0; $i < $numero_de_monedas; $i++) {
     $lista[$i] = rand(0, 1);
 }
 
-print_r($lista);
+// Mostrar las monedas
+for ($i = 0; $i < $numero_de_monedas; $i++) {
+    if ($lista[$i] == 0) {
+        echo "<img src='images/euro-cara.jpg'>";
+    } else {
+        echo "<img src='images/euro-cruz.jpg'>";
+    }
+}
 
 ?>
