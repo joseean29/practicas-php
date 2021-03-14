@@ -50,18 +50,18 @@ $result = mysqli_query($mysqli, "SELECT * FROM alumno ORDER BY apellido1,apellid
       </tr>
 
     <?php
-    while($res = mysqli_fetch_array($result)) {
+    while($fila = mysqli_fetch_array($result)) {
       echo "<tr>";
-      echo "<td><img src=\"img/".$res['imagen_perfil']."\"></td>";
-      echo "<td>".$res['id']."</td>";
-      echo "<td>".$res['nombre']."</td>";
-      echo "<td>".$res['apellido1']."</td>";
-      echo "<td>".$res['apellido2']."</td>";
-      echo "<td>".$res['candidato']."</td>";
+      echo "<td><img src=\"img/".$fila['imagen_perfil']."\"></td>";
+      echo "<td>".$fila['id']."</td>";
+      echo "<td>".$fila['nombre']."</td>";
+      echo "<td>".$fila['apellido1']."</td>";
+      echo "<td>".$fila['apellido2']."</td>";
+      echo "<td>".$fila['candidato']."</td>";
 
       // Sólo mostramos el botón de Login si el usuario no ha votado todavía
-      if (empty($res[vota_a])) {
-        echo "<td><a class=\"btn btn-primary\" href=\"candidatos.php?id=".$res['id']."\" role=\"button\">Login</a></td>";
+      if (empty($fila[vota_a])) {
+        echo "<td><a class=\"btn btn-primary\" href=\"candidatos.php?id=".$fila['id']."\" role=\"button\">Login</a></td>";
       } else {
         echo "<td></td>";
       }
